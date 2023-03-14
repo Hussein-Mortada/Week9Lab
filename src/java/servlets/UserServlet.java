@@ -33,7 +33,7 @@ public class UserServlet extends HttpServlet {
          UserService us= new UserService();
          HttpSession session=request.getSession();
          String action = request.getParameter("action");
-         ArrayList<User> users;
+         List<User> users;
          try {
             if (action != null && !action.equals("")) {
                 String email = request.getParameter("email").replaceAll(" ", "\\+");
@@ -91,7 +91,7 @@ public class UserServlet extends HttpServlet {
         
         if(action!=null&&action.equals("Add User")){
             try {
-                ArrayList<User> users = us.getAll();
+                List<User> users = us.getAll();
                 for(int i=0;i<users.size();i++){
                     if(users.get(i).getEmail().equals(email)){
                         request.setAttribute("fillAll", "Email is in use");
@@ -119,7 +119,7 @@ public class UserServlet extends HttpServlet {
             }
         }
         try {
-            ArrayList<User> users = us.getAll();
+            List<User> users = us.getAll();
             session.setAttribute("users",users);
         } catch (Exception ex) {
             Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);

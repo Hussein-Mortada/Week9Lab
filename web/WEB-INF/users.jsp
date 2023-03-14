@@ -63,9 +63,9 @@
                 Role: 
                 <select name="role">
                 <option value="1">system admin</option>
-                <option value="2" ${user.getRole().getRoleID() == '2' ? 'selected' : ''}>regular user</option>
+                <option value="2" ${user.getRole().getRoleId() == '2' ? 'selected' : ''}>regular user</option>
                 </select><br>
-                <input type="hidden" name="role" value="${user.getRole().getRoleID()}">
+                <input type="hidden" name="role" value="${user.getRole().getRoleId()}">
                 <input type="submit" name="submit" value="Update">
                 <input type="submit" name="submit" value="Cancel">
             </form>
